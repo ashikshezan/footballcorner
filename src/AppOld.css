@@ -1,0 +1,235 @@
+
+@import url('https://fonts.googleapis.com/css?family=Syncopate:800,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300&display=swap');
+:root {
+  --logoFont: 'Syncopate';
+  --mainFont: 'Open Sans';
+
+  --deepBlue: #557a95;
+  --lightBlue: #7395ae;
+  --deepGrey: #5d5c61;
+  --lightGrey: #379683;
+  --lightMate: #b1a296;
+  --mainWhite: rgb(225, 233, 236);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+body {
+  font-family: var(--mainFont), sans-serif;
+  background: var(--mainWhite);
+  font-size: 1rem;
+  margin: 0;
+  padding-top: 0;
+}
+
+
+.layout {
+  display: grid;
+  grid-template-columns: 101px 1200px 100px;
+  grid-template-rows: 60px auto 30px;
+  grid-gap: 10px;
+  grid-template-areas: 
+  "w n w"
+  "w c w"
+  "w f w"
+  ;
+  background-color: blue;
+}
+
+
+.navbar {
+  grid-area: n;  
+  background-color: #2F3342;
+  color: aliceblue;
+
+  /* display: flex; */
+  /* padding: 10px; */
+  /* align-items: center; */
+  /* justify-content: space-around; */
+  /* text-transform: uppercase; */
+}
+
+.logo {
+  font-family: var(--logoFont);
+  font-size: 16px;
+  letter-spacing: -.8px;
+}
+.links {
+  display: flex;
+  justify-content: space-around;
+  width: 25%;
+  font-size: 11px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.links > li {
+  list-style: none;
+  white-space: nowrap;
+  padding: 7px;
+  cursor: pointer;
+}
+
+
+
+
+
+.content {
+  grid-area: cont;
+  background-color: rgb(213, 229, 238);
+}
+.sidebar {
+grid-area: side;
+background-color: #7FC3EA;
+overflow: hidden;
+
+}
+footer {
+  grid-area: foot;
+  background-color: #2F3342;
+  color: aliceblue;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.title {
+  background-color: rgb(74, 74, 95);
+  grid-column: span 2;
+  height: 30px;
+  margin-top: -15px;
+  color: aliceblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  font-weight: bold;
+}
+.title > hr {
+  min-width: 300px;
+  margin: 10px 10px; 
+}
+.title > span {
+  min-width: 100px;
+  text-align: center;
+}
+
+
+/*  Home Layout */
+.home-layout {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(450px, 1fr 1fr));
+  /* grid-auto-rows: 400px; */
+  grid-row-gap: 15px;
+  grid-column-gap: 50px;
+  /* grid-auto-flow: dense; */
+  /* justify-content: space-between; */
+  /* align-items: center; */
+  margin: 40px;
+}
+
+/* Table */
+/* .point-table {
+  font-family: var(--mainFont);
+  min-width: 300px;
+  max-height: 400px;
+  display: flex;
+  justify-content: space-between;
+} */
+table{
+  width:100%;
+  table-layout: fixed;
+}
+.tbl-header{
+  background-color: rgba(255,255,255,0.3);
+ }
+.tbl-content{
+  height:300px;
+  overflow-x:auto;
+  margin-top: 0px;
+  border: 1px solid rgba(255,255,255,0.3);
+}
+th{
+  padding: 20px 15px;
+  text-align: left;
+  font-weight: 500;
+  font-size: 10px;
+  font-weight: bold;
+  /* color: #fff; */
+  text-transform: capitalize;
+}
+td{
+  padding: 15px;
+  text-align: left;
+  vertical-align:middle;
+  font-weight: 300;
+  font-size: 12px;
+  /* color: #fff; */
+  border-bottom: solid 1px rgba(255,255,255,0.1);
+}
+
+.home-table {
+  min-width: 100%;
+  height: 500px;
+  background-color: rgb(162, 187, 187);
+  display: grid;
+  justify-self: start;
+}
+
+
+
+@media (max-width: 600px) {
+  .main {
+    display: grid;
+    grid-template-columns: auto 300px;
+    grid-template-columns: repeat(1, auto 300px);
+    grid-template-rows: 60px auto auto 30px;
+    grid-template-areas: 
+    "nav nav"
+    "cont cont"
+    "side side"
+    "foot foot"
+    ;
+  }
+  .home-layout {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+    /* grid-auto-rows: 400px; */
+    grid-row-gap: 15px;
+    grid-column-gap: 50px;
+    /* grid-auto-flow: dense; */
+    /* justify-content: space-between; */
+    /* align-items: center; */
+    margin: 40px;
+  }
+  .title {
+    background-color: rgb(74, 74, 95);
+    grid-column: span 2;
+    height: 30px;
+    margin-top: -15px;
+    color: aliceblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    font-weight: bold;
+  }
+  .title > hr {
+    min-width: 100px;
+    margin: 10px 10px; 
+  }
+  .title > span {
+    min-width: 100px;
+    text-align: center;
+  }
+  
+}
+
+
