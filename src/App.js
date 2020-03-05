@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useContext } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Sidebar from './components/Sidebar'
@@ -13,23 +13,27 @@ import Error from './pages/Error'
 
 import './App.css';
 
+import DataProvider from './context'
+
 function App() {
   return (
-    <Router>
-      <Layout>
-        <Navbar />
-        <Sidebar />
-        <Content>
-          <Switch>
-            <Route exact path='/' component={Home} />
-            <Route exact path='/league/:slug' component={League} />
-            <Route exact path='/team/:slug' component={Team} />
-            <Route component={Error} />
-          </Switch>
-        </Content>
-        <Footer />
-      </Layout>
-    </Router>
+    <DataProvider>
+      <Router>
+        <Layout>
+          <Navbar />
+          <Sidebar />
+          <Content>
+            <Switch>
+              <Route exact path='/' component={Home} />
+              <Route exact path='/league/:slug' component={League} />
+              <Route exact path='/team/:slug' component={Team} />
+              <Route component={Error} />
+            </Switch>
+          </Content>
+          <Footer />
+        </Layout>
+      </Router>
+    </DataProvider>
   )
 }
 
