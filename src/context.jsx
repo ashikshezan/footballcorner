@@ -21,7 +21,7 @@ function fetchdata() {
   let url = "http://api.football-data.org/v2/competitions"
   url = "https://api.football-data.org/v2/players/2019/matches"
   url = 'https://api.football-data.org/v2/competitions/SA/scorers'
-  url = 'http://api.football-data.org/v2/competitions/PL/standings'
+  url = 'https://api.football-data.org/v2/competitions/PL/standings'
   axios({
     method: 'GET',
     headers: { 'X-Auth-Token': 'c8edaa15323f4a22811f41febf612492' },
@@ -37,3 +37,5 @@ function fetchdata() {
     .then(response => print(response))
     .catch(error => print(error))
 }
+
+// function getLeagueTable(name, )
